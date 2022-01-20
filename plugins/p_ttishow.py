@@ -4,7 +4,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, ST
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, VID
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp
@@ -64,7 +64,7 @@ async def save_group(bot, message):
                 except:
                     pass
             temp.MELCOW['welcome'] = await message.reply_video(
-                                                                sticker=random.choice(ST),
+                                                                video=random.choice(VID),
                                                                 caption=f"<b>{u.mention}, 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {message.chat.title} \n താങ്കൾക്ക് സിനിമ എടുക്കാൻ അറിയില്ലെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ ചെയ്യുക😌 </b>",
                                                                 reply_markup=reply_markup,
                                                                 parse_mode='html'
