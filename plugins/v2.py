@@ -20,9 +20,6 @@ from youtubesearchpython import SearchVideos
 from config import Config
 from info import API_ID, API_HASH, BOT_TOKEN
 
-API_ID = environ.get('API_ID')
-API_HASH = environ.get('API_HASH')
-BOT_TOKEN = environ.get('BOT_TOKEN')
 
 @Client.on_message(filters.command(["songg", "ss", "mmu", "aaud"]) & ~filters.edited)
 def song(client, message):
