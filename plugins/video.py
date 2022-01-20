@@ -22,7 +22,7 @@ from plugins.config import DURATION_LIMIT
 
 
 
-@Client.on_message(filters.command("song") & ~filters.channel)
+@Client.on_message(filters.command("son") & ~filters.channel)
 def song(client, message):
 
     user_id = message.from_user.id
