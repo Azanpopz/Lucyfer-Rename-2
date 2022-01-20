@@ -19,10 +19,10 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
+from config import Config
 
 
-
-@Client.on_message(filters.command(["song", "s", "mu", "aud"]) & ~filters.edited)
+@Client.on_message(filters.command(["mp3", "aud"]) & ~filters.edited)
 def song(client, message):
 
     user_id = message.from_user.id
@@ -247,7 +247,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command(["vsong", "video"]))
+@Client.on_message(filters.command(["vsong", "vid"]))
 async def ytmusic(client, message: Message):
     global is_downloading
     if is_downloading:
