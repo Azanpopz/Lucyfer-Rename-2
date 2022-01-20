@@ -13,11 +13,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 
 
-@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private & filters.command(["ytthumb"]))
 @Client.on_message(filters.media & filters.text & filters.command(["stream"]))
-
-
-@Client.on_message(filters.private & (filters.media, & filters.text & filters.command(["stream"]))
 async def filter(bot, update):
     if update.text:
         if not update.text.startswith("http://") or not update.text.startswith("https://"):
