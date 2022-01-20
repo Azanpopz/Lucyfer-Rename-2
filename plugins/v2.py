@@ -17,7 +17,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
-
+from config import Config
 from info import API_ID, API_HASH, BOT_TOKEN
 
 API_ID = environ.get('API_ID')
