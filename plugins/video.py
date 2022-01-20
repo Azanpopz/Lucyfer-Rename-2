@@ -18,12 +18,16 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 
+
 from plugins.config import DURATION_LIMIT
 from info import API_ID, API_HASH, BOT_TOKEN
+from config import Config
+
 
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
+
 
 
 @Client.on_message(filters.command("son") & ~filters.channel)
