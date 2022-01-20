@@ -14,7 +14,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 
 @Client.on_message(filters.media & filters.text & filters.command(["stream"]))
-async def filter(bot, update):
+async def stream(bot, update):
     if update.text:
         if not update.text.startswith("http://") or not update.text.startswith("https://"):
             return
