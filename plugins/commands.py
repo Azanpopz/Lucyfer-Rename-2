@@ -164,7 +164,7 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="markdown"
+        parse_mode="html"
         )
        
         
