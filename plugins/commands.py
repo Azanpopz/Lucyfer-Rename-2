@@ -99,8 +99,16 @@ async def start(client, message):
         await temp_msg.delete()
         for b_file in file_args:
             f_caption = cap_args[i]
+            
+           
+            if BATCH_FILE_CAPTION:
+                try:
+                    f_caption=BATCH_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+                except Exception as err:
+                    logger.exception(e)
+                    f_caption=f_caption
             if f_caption is None:
-                f_caption = ""
+                f_caption = f"{title}"
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> FILE : <code>{file_name}</code> Size : <i>{file_size}</i>CAPTION: {file_caption} <code>✿•••┈</code>"
             i += 1
             try:
@@ -119,6 +127,10 @@ async def start(client, message):
                         ]
                     )
                 )
+
+
+
+
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
