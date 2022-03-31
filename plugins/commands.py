@@ -97,42 +97,35 @@ async def start(client, message):
         i = 0
         await asyncio.sleep(2)
         await temp_msg.delete()
-        for b_file in file_args:
-            f_caption = cap_args[i]
-            
-           
-   
-
-    if CUSTOM_FILE_CAPTION:
-            try:
-                f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
-            except Exception as e:
-                logger.exception(e)
-                f_caption=f_caption
-                if f_caption is None:
-                   f_caption = f"{files.file_name}"
-                buttons = [
-                               [
-                                   InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
-                               ],
-                               [
-                                   InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
-                                   InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
-                               ],
-                               [
-                                   InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
-                                   InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
-                        
-                               ]
-                               ]
+        if CUSTOM_FILE_CAPTION:
+        try:
+            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+        except Exception as e:
+            logger.exception(e)
+            f_caption=f_caption
+    if f_caption is None:
+        f_caption = f"{files.file_name}"
+    buttons = [
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                    ],
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
+                    ],
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
+                  
+                    ]
+                    ]
     await client.send_cached_media(
         chat_id=message.from_user.id,
-        file_id=b_file,
+        file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="html"
         )
-
 
 
 
