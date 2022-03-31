@@ -101,32 +101,41 @@ async def start(client, message):
             f_caption = cap_args[i]
             
            
-            if BATCH_FILE_CAPTION:
-                try:
-                    f_caption=BATCH_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
-                except Exception as err:
-                    logger.exception(e)
-                    f_caption=f_caption
-            if f_caption is None:
-                f_caption = f"{title}"
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @munnipopz <code>✿•••┈</code>"
-            i += 1
-            try:
-                await client.send_cached_media(
-                    chat_id=message.from_user.id,
-                    file_id=b_file,
-                    caption=f_caption,
-                    parse_mode="html",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/NasraniSeries"
-                                )
-                            ]
-                        ]
-                    )
-                )
+            if CUSTOM_FILE_CAPTION:
+        try:
+            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+        except Exception as e:
+            logger.exception(e)
+            f_caption=files.caption
+    if CUSTOM_FILE_CAPTION:
+        try:
+            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+        except Exception as e:
+            logger.exception(e)
+            f_caption=f_caption
+    if f_caption is None:
+        f_caption = f"{files.file_name}"
+    buttons = [
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                    ],
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
+                    ],
+                    [
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
+                  
+                    ]
+                    ]
+    await client.send_cached_media(
+        chat_id=message.from_user.id,
+        file_id=b_file,
+        caption=f_caption,
+        reply_markup=InlineKeyboardMarkup(buttons),
+        parse_mode="html"
+        )
 
 
 
