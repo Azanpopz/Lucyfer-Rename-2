@@ -110,7 +110,7 @@ async def start(client, message):
                 logger.exception(e)
                 f_caption=f_caption
                 if f_caption is None:
-                f_caption = f"{files.file_name}"
+        f_caption = f"{files.file_name}"
         buttons = [
                         [
                             InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
