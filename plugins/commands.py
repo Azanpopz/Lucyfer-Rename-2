@@ -97,7 +97,7 @@ async def start(client, message):
         i = 0
         await asyncio.sleep(2)
         await temp_msg.delete()
-        if CUSTOM_FILE_CAPTION:
+    if CUSTOM_FILE_CAPTION:
         try:
             f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
         except Exception as e:
@@ -126,9 +126,6 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="html"
         )
-
-
-
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
