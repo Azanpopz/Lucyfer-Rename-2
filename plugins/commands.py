@@ -113,7 +113,7 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/UFSChatBot"
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/NasraniSeries"
                                 )
                             ]
                         ]
@@ -122,7 +122,7 @@ async def start(client, message):
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
-        return await message.reply(f"<b><a href='https://t.me/UniversalFilmStudio'>Thank For Using Me...</a></b>")
+        return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
     files_ = await get_file_details(file_id)
     if not files_:
