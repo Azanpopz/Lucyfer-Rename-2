@@ -101,7 +101,7 @@ async def start(client, message):
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @UniversalFilmStudio <code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code> FILE : <code>{file_name}</code> Size : <i>{file_size}</i>CAPTION: {file_caption} <code>✿•••┈</code>"
             i += 1
             try:
                 await client.send_cached_media(
