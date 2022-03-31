@@ -154,5 +154,8 @@ t𝗋𝗒 𝗍𝗁𝗂𝗌 𝖮𝗎𝗍:
     CAPTION_TEXT = """𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 ➧ 𝙐𝙁𝙎 𝘽𝙤𝙩𝙯
 ━═━═━═━═━═━═━═━═
 ⟱⟱⟱⟱⟱⟱⟱ 𝕁𝕠𝕚𝕟 ⟱⟱⟱⟱⟱⟱⟱
+FILE : <code>{file_name}</code> 
+Size : <i>{file_size}</i>
+CAPTION: {file_caption}
 ━═━ @nasrani_update ━═━"""
 
