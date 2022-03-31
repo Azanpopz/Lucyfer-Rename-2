@@ -126,18 +126,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="html"
         )
-            except Exception as err:
-                return await message.reply(f"{str(err)}")
-            await asyncio.sleep(1)
-        return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-
-    files_ = await get_file_details(file_id)
-    if not files_:
-        return await message.reply('No such file exist.')
-    files = files_[0]
-    title = files.file_name
-    size=get_size(files.file_size)
-    f_caption=files.caption
+            
     
     if CUSTOM_FILE_CAPTION:
         try:
