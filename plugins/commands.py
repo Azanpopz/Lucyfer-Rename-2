@@ -109,7 +109,7 @@ async def start(client, message):
             except Exception as e:
                 logger.exception(e)
                 f_caption=f_caption
-        if f_caption is None:
+                if f_caption is None:
             f_caption = f"{files.file_name}"
         buttons = [
                         [
