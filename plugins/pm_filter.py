@@ -165,8 +165,7 @@ async def advantage_spoll_choker(bot, query):
         await auto_filter(bot, query, k)
     else:
         k = await query.answer("😌തനിക്ക് ഇതിന്റെ ആവിശ്യം ഉണ്ടോന്നു തോന്നുന്നില്ല😌", show_alert=True
-        await asyncio.sleep(3)
-        await k.delete()
+        
 
 
 @Client.on_callback_query()
