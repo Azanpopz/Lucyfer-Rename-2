@@ -164,9 +164,9 @@ async def advantage_spoll_choker(bot, query):
         k = (movie, files, offset, total_results)
         await auto_filter(bot, query, k)
     else:
-        k = await query.message.edit('This Movie Not Found In DataBase')
-            await asyncio.sleep(10)
-            await k.delete()
+        k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഞങ്ങളുടെ പക്കലില്ലെന്ന് കണ്ടത്തിയിട്ടുണ്ട്. നിങ്ങൾ ചോദിച്ച മൂവീസ് കിട്ടാതിരിക്കാനുള്ള കാരണങ്ങൾ \n DVD ഇറങ്ങിയിട്ടുണ്ടാകില്ല \n നിങ്ങൾ ചോദിച്ച മൂവീസ് തെറ്റായിരിക്കും \n അല്ലെങ്കിൽ ഞങ്ങളുടെ ഡാറ്റാബേസിൽ ഇല്ലായിരിക്കും.. follow admins..')
+        await asyncio.sleep(35)
+        await k.delete()
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
