@@ -876,7 +876,7 @@ async def advantage_spell_chok(msg):
                 )
             ] for k, movie in enumerate(movielist)]    
     
-    btn.append = InlineKeyboardMarkup(
+    btn.append(
       [
           [
                InlineKeyboardButton("your bu😄tton", url = "link.com"), 
