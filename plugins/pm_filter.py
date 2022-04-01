@@ -887,7 +887,7 @@ async def advantage_spell_chok(msg):
                InlineKeyboardButton("your b😄uttn", url = "link.com")
           ],
           [
-                            InlineKeyboardBu😄tton("your button", url = "link.com")
+               InlineKeyboardBu😄tton("your button", url = "link.com")
           ]
       ]
   )  
