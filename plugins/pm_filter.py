@@ -880,17 +880,17 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", callback_data=f'spolling#{user}#close_spellcheck'),
                 InlineKeyboardButton("about", "alert")       
             ],
-    btn.append = reply_markup=InlineKeyboardMarkup(
-                   [
-                       [
-                            InlineKeyboardButton("your button", url = "link"), 
-                            InlineKeyboardButton("your buttn", url = "link")
-                       ],
-                       [
-                            InlineKeyboardButton("your button", url = "link")
-                       ]
-                   ]
-               )  
+    btn.append = InlineKeyboardMarkup(
+      [
+          [
+               InlineKeyboardButton("your bu😄tton", url = "link.com"), 
+               InlineKeyboardButton("your b😄uttn", url = "link.com")
+          ],
+          [
+                            InlineKeyboardBu😄tton("your button", url = "link.com")
+          ]
+      ]
+  )  
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup(btn))
