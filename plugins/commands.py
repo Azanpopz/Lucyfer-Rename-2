@@ -114,6 +114,10 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = ""
             f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
+            files = files_[0]
+            title = files.file_name
+            size=get_size(files.file_size)
+            f_caption=files.caption
             i += 1
             try:
 
