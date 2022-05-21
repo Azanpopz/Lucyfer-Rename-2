@@ -91,20 +91,28 @@ async def start(client, message):
     unique_id, f_id, file_ref, caption = await get_batch("Eva-V3", file_id)
 
     if unique_id:
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("⏳ Wait 30 seconds to get the next size files")
         file_args = f_id.split("#")
         cap_args = caption.split("#")
         i = 0
-        await asyncio.sleep(2)
-        await temp_msg.delete()
+        await asyncio.sleep(3)
+        
+        
         for b_file in file_args:
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @UniversalFilmStudio <code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
             i += 1
             try:
-                await client.send_cached_media(
+                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
+                    await asyncio.sleep(1)
+                    await k.delete()
+                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎ ◎ ◎")
+                    await asyncio.sleep(1)
+                    await k.delete()
+                    
+                    k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
@@ -113,16 +121,20 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/nasrani_update"
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f'https://t.me/mazhatthullikal'
                                 )
                             ]
                         ]
                     )
                 )
+                         
+                    
             except Exception as err:
                 return await message.reply(f"{str(err)}")
-            await asyncio.sleep(1)
-        return await message.reply(f"<b><a href='https://t.me/UniversalFilmStudio'>Thank For Using Me...</a></b>")
+            
+        return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
+        
+
 
     files_ = await get_file_details(file_id)
     if not files_:
@@ -145,6 +157,8 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
+    
+   
     buttons = [
                     [
                         InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
@@ -159,12 +173,18 @@ async def start(client, message):
                   
                     ]
                     ]
-    await client.send_cached_media(
+    k = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="markdown"
+        parse_mode="html"
+                
+        )
+    await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
+    await message.reply_sticker(
+            sticker=random.choice(STC),
+
         )
        
         
