@@ -99,7 +99,7 @@ async def start(client, message):
         await temp_msg.delete()
     if CUSTOM_FILE_CAPTION:
         try:
-            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+            f_caption=CUSTOM_FILE_CAPTION.format(file_size=size, file_caption=f_caption)
         except Exception as e:
             logger.exception(e)
             f_caption=f_caption
