@@ -105,12 +105,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
             i += 1
             try:
-                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
-                    await asyncio.sleep(1)
-                    await k.delete()
-                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎ ◎ ◎")
-                    await asyncio.sleep(1)
-                    await k.delete()
+                    
                     
                     k = await client.send_cached_media(
                     chat_id=message.from_user.id,
