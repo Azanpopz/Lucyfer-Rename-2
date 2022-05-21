@@ -118,22 +118,7 @@ async def start(client, message):
             try:
 
                     
-                    f_caption=files.caption
-                    if CUSTOM_FILE_CAPTION:
-                        try:
-                            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
-                        except Exception as e:
-                            logger.exception(e)
-                            f_caption=files.caption
-                    if CUSTOM_FILE_CAPTION:
-                        try:
-                            f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
-                        except Exception as e:
-                            logger.exception(e)
-                            f_caption=f_caption
-                    if f_caption is None:
-                        f_caption = f"{files.file_name}"
-   
+                    
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
                     await asyncio.sleep(1)
                     await k.delete()
