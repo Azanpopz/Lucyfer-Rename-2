@@ -117,9 +117,7 @@ async def start(client, message):
             i += 1
             try:
 
-                    files = files_[0]
-                    title = files.file_name
-                    size=get_size(files.file_size)
+                    
                     f_caption=files.caption
                     if CUSTOM_FILE_CAPTION:
                         try:
