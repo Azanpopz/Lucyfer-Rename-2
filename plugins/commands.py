@@ -109,36 +109,40 @@ async def start(client, message):
         await asyncio.sleep(3)
         
         
-        for msg in messages:
-
-            if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
-            else:
-                caption = "" if not msg.caption else msg.caption.html
-
-            if DISABLE_CHANNEL_BUTTON:
-                reply_markup = msg.reply_markup
-            else:
-                reply_markup = None
-
+        for b_file in file_args:
+            f_caption = cap_args[i]
+            if f_caption is None:
+                f_caption = ""
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
+            i += 1
             try:
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = 'html', reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                await asyncio.sleep(0.5)
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = 'html', reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-            except:
-                pass
-        return
-    else:
-        reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-            ]
-        )
+                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
+                    await asyncio.sleep(1)
+                    await k.delete()
+                    k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎ ◎ ◎")
+                    await asyncio.sleep(1)
+                    await k.delete()
+                    
+                    k = await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=b_file,
+                    caption=f_caption,
+                    parse_mode="html",
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton(
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f'https://t.me/mazhatthullikal'
+                                )
+                            ]
+                        ]
+                    )
+                )
+                         
+                    
+            except Exception as err:
+                return await message.reply(f"{str(err)}")
+            
 
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
         
