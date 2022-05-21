@@ -139,9 +139,7 @@ async def start(client, message):
                 ]
             ]
         )
-            except Exception as err:
-                return await message.reply(f"{str(err)}")
-            
+
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
         
 
