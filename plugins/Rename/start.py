@@ -21,9 +21,7 @@ async def filter(bot, update):
     )
 
 
-@Client.on_message(
-    filters.command("rename") 
-)
+@Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message):
     koshik = await message.reply_text("**Processing...😪**")
     try:
