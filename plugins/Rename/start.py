@@ -36,7 +36,7 @@ async def filter(bot, update):
 
 
 @Client.on_message(filters.private & filters.command(["rename"]))
-async def send_doc(client, message)
+async def rename(client, message)
     user_id = message.from_user.id
     tx = await message.reply_text("Checking Sticker")
     await tx.edit("Validating st..")
