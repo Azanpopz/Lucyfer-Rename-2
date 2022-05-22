@@ -22,8 +22,8 @@ from pyrogram.types import User, Message, Sticker, Document
 
 
 
-@Client.on_message(filters.private)
-async def rename(bot,message):
+@Client.on_message(filters.private &( filters.document | filters.audio | filters.video ))
+async def send_doc(client,message):
        media = await bot.get_messages(message.chat.id,message.message_id)
        file = media.document or media.video or media.audio 
        filename = file.file_name
