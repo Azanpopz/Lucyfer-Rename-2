@@ -36,8 +36,8 @@ async def filter(bot, update):
 
 
 @Client.on_message(filters.private & filters.command(["rename"]))
-async def rename(client,message):
-       media = await client.get_messages(message.chat.id,message.message_id)
+async def rename(bot,message):
+       media = await bot.get_messages(message.chat.id,message.message_id)
        file = media.document or media.video or media.audio 
        filename = file.file_name
        filesize = humanize.naturalsize(file.file_size)
