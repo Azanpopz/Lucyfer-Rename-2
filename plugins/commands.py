@@ -134,6 +134,10 @@ async def start(client, message):
             filename = file.file_name
             filesize = humanize.naturalsize(file.file_size)
             fileid = file.file_id
+            if f_caption is None:
+                f_caption = ""
+            f_caption = f_caption + f" {filename} \n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
+            i += 1
             try:
                     
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
@@ -146,7 +150,7 @@ async def start(client, message):
                     k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
-                    caption=f"{filename}  {filesize}",
+                    caption=f"  {filesize}",
                     parse_mode="html",
                     reply_markup=InlineKeyboardMarkup(
                         [
