@@ -66,7 +66,17 @@
             "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
             "required": false
         },
-        "DATABASE_URI": {
+        "RENAME_DB_URL": {
+            "description": "mongoDB URI. Get this value from https://www.mongodb.com. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
+            "value": "mongodb+srv://Munnipopz:Zebhamol@cluster0.wh5tr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            "required": true
+        },
+        "RENAME_DB_NAME": {
+            "description": "Name of the database in mongoDB. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
+            "value": "Cluster0",
+            "required": false
+        },
+                "DATABASE_URI": {
             "description": "mongoDB URI. Get this value from https://www.mongodb.com. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
             "required": true
         },
