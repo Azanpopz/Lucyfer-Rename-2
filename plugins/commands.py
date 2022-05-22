@@ -130,17 +130,12 @@ async def start(client, message):
         await asyncio.sleep(3)
         
         
-        for b_file in file_args:
-            f_caption = cap_args[i]
-            if f_caption is None:
-                f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
-            i += 1
+        for file = media.document or media.video or media.audio 
+            filename = file.file_name
+            filesize = humanize.naturalsize(file.file_size)
+            fileid = file.file_id
             try:
-                    file = media.document or media.video or media.audio 
-                    filename = file.file_name
-                    filesize = humanize.naturalsize(file.file_size)
-                    fileid = file.file_id
+                    
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
                     await asyncio.sleep(1)
                     await k.delete()
