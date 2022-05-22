@@ -24,12 +24,12 @@ async def filter(bot, update):
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message)
     
-    if not message.reply_to_message_media: 
+    if message.reply_to_message_media: 
         return await message.reply_text(
             "Kko."
         )
 
-try:
+
     user_id = message.from_user.id
     media = await client.get_messages(message.chat.id,message.message_id)
     file = media.document or media.video or media.audio 
