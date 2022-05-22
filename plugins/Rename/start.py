@@ -37,10 +37,10 @@ async def filter(bot, update):
 
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message)
-    
+    user_id = message.from_user.id
     tx = await message.reply_text("Checking Sticker")
-    await tx.edit("Validating sticker..")
-    if message.reply_to_message.sticker is False:
+    await tx.edit("Validating st..")
+    if message.reply_to_message.media is False:
         await tx.edit("Not a Sticker File!!")
                    try :     
                         user_id = message.from_user.id
