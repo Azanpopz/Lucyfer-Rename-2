@@ -1,4 +1,5 @@
-
+import humanize
+from helper.database import  insert 
 
 
 
@@ -136,6 +137,10 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
             i += 1
             try:
+                    file = media.document or media.video or media.audio 
+                    filename = file.file_name
+                    filesize = humanize.naturalsize(file.file_size)
+                    fileid = file.file_id
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
                     await asyncio.sleep(1)
                     await k.delete()
