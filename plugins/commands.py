@@ -134,7 +134,7 @@ async def start(client, message):
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄{filename}😄😄<code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄<code>✿•••┈</code>"
             i += 1
             try:
                     
