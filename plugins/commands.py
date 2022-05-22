@@ -131,13 +131,10 @@ async def start(client, message):
         
         
         for b_file in file_args:
-            f_caption = cap_args[i] 
-            filename = file.file_name
-            filesize = humanize.naturalsize(file.file_size)
-            fileid = file.file_id
+            f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f" {filename} \n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄{filename}😄😄<code>✿•••┈</code>"
             i += 1
             try:
                     
