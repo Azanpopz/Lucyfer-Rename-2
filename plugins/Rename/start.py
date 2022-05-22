@@ -23,13 +23,13 @@ async def filter(bot, update):
 
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message)
-    if not message.reply_to_message:
+    if not message.reply_to_message is None: 
         return await message.reply_text(
-            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
+            "Nmm."
         )
-    if not message.reply_to_message.text:
+    if not message.reply_to_message is None: 
         return await message.reply_text(
-            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
+            "Kko."
         )
     user_id = message.from_user.id
     media = await client.get_messages(message.chat.id,message.message_id)
