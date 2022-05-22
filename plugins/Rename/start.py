@@ -26,7 +26,7 @@ async def filter(bot, update):
 )
 async def send_doc(client, message):
     koshik = await message.reply_text("**Processing...😪**")
-   try:
+    try:
        media = await client.get_messages(message.chat.id,message.message_id)
        file = media.document or media.video or media.audio 
        filename = file.file_name
