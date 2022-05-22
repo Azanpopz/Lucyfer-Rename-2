@@ -28,6 +28,8 @@ async def send_doc(client, message)
         return await message.reply_text(
             "Kko."
         )
+
+try:
     user_id = message.from_user.id
     media = await client.get_messages(message.chat.id,message.message_id)
     file = media.document or media.video or media.audio 
