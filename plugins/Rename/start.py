@@ -20,19 +20,6 @@ from pyrogram.types import User, Message, Sticker, Document
 
 
 
-@Client.on_message(filters.private & filters.command (["search"]) & filters.text)
-async def filter(bot, update):
-    await update.reply_text(
-        text="`Click the button below for searching...`",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton(text="Search Here", switch_inline_query_current_chat=update.text)],
-                [InlineKeyboardButton(text="Search in another chat", switch_inline_query=update.text)]
-            ]
-        ),
-        disable_web_page_preview=True,
-        quote=True
-    )
 
 
 @Client.on_message(filters.private & filters.command(["rename"]))
