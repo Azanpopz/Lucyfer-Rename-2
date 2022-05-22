@@ -23,7 +23,7 @@ async def filter(bot, update):
 
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message)
-  if (message.chat.id,message.message_id)
+        if (message.chat.id,message.message_id)
    try:
 
        media = await client.get_messages(message.chat.id,message.message_id)
