@@ -23,14 +23,16 @@ async def filter(bot, update):
 
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message):
-       message = await message.reply("Converting...")
-       media = await client.get_messages(message.chat.id,message.message_id)
-       file = media.document or media.video or media.audio 
-       filename = file.file_name
-       filesize = humanize.naturalsize(file.file_size)
-       fileid = file.file_id
-       await message.reply_text(
-       f"""__What do you want me to do with this file?__\n**File Name** :- {filename}\n**File Size** :- {filesize}"""
-       ,reply_to_message_id = message.message_id,
-       reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("📝 Rename ",callback_data = "rename")
-       ,InlineKeyboardButton("Cancel✖️",callback_data = "cancel")  ]]))
+	if (message.chat.id,message.message_id):
+		try:
+                    message = await message.reply("Converting...")
+                    media = await client.get_messages(message.chat.id,message.message_id)
+                    file = media.document or media.video or media.audio 
+                    filename = file.file_name
+                    filesize = humanize.naturalsize(file.file_size)
+                    fileid = file.file_id
+                    await message.reply_text(
+                    f"""__What do you want me to do with this file?__\n**File Name** :- {filename}\n**File Size** :- {filesize}"""
+                    ,reply_to_message_id = message.message_id,
+                    reply_markup = InlineKeyboardMarkup([[ InlineKeyboardButton("📝 Rename ",callback_data = "rename")
+                    ,InlineKeyboardButton("Cancel✖️",callback_data = "cancel")  ]]))
