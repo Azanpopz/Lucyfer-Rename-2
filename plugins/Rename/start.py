@@ -24,7 +24,7 @@ async def filter(bot, update):
 @Client.on_message(filters.private & filters.command(["rename"]))
 async def send_doc(client, message)
     
-    if not message.reply_to_message is None: 
+    if not message.reply_to_message_media: 
         return await message.reply_text(
             "Kko."
         )
