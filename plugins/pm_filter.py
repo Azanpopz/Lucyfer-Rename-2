@@ -805,6 +805,8 @@ async def auto_filter(client, msg, spoll=False):
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
         
+        if 1 < len(message.text) < 100:
+
             search = message.text
 
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
@@ -819,7 +821,9 @@ async def auto_filter(client, msg, spoll=False):
 
                     return
 
+        else:
 
+            return
 
     else:
         message = msg.message.reply_to_message # msg will be callback query
