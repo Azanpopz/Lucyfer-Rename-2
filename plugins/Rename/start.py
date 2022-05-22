@@ -42,11 +42,6 @@ async def send_doc(client, message)
     await tx.edit("Validating sticker..")
     if message.reply_to_message.sticker is False:
         await tx.edit("Not a Sticker File!!")
-    else :
-          if message.reply_to_message is None: 
-               tx =  await tx.edit("Reply to a Sticker File!")       
-          else :
-               if message.reply_to_message.sticker.is_animated:
                    try :     
                         user_id = message.from_user.id
                         media = await client.get_messages(message.chat.id,message.message_id)
