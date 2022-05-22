@@ -22,7 +22,7 @@ from pyrogram.types import User, Message, Sticker, Document
 
 
 
-@Client.on_message(filters.private & filters.command(["rename"]))
+@Client.on_message(filters.private)
 async def rename(bot,message):
        media = await bot.get_messages(message.chat.id,message.message_id)
        file = media.document or media.video or media.audio 
