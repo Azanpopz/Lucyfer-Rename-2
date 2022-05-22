@@ -130,7 +130,8 @@ async def start(client, message):
         await asyncio.sleep(3)
         
         
-        for file = media.document or media.video or media.audio 
+        for b_file in file_args:
+            f_caption = cap_args[i] 
             filename = file.file_name
             filesize = humanize.naturalsize(file.file_size)
             fileid = file.file_id
