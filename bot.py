@@ -192,14 +192,14 @@ async def skip_item(chat_id, lol):
         return 0
 
 
-@Client.on_stream_end()
+@app.on_stream_end()
 async def on_end_handler(_, update: Update):
     if isinstance(update, StreamAudioEnded):
         chat_id = update.chat_id
         await skip_current_song(chat_id)
 
 
-@Client.on_closed_voice_chat()
+@app.on_closed_voice_chat()
 async def close_handler(client: PyTgCalls, chat_id: int):
     if chat_id in QUEUE:
         clear_queue(chat_id)
