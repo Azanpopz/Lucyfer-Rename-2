@@ -36,14 +36,14 @@ from re import match, search
 """Connecting to Bot"""
 app = Client(
     session_name = "RequestTrackerBot",
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH,
-    bot_token = Config.BOT_TOKEN
+    api_id = Req.API_ID,
+    api_hash = Req.API_HASH,
+    bot_token = Req.BOT_TOKEN
 )
 
 
 '''Connecting To Database'''
-mongo_client = MongoClient(Config.MONGO_STR)
+mongo_client = MongoClient(Req.MONGO_STR)
 db_bot = mongo_client['RequestTrackerBot']
 collection_ID = db_bot['channelGroupID']
 
