@@ -84,7 +84,7 @@ bot = Client(
 
 Bot = Client(os.environ["SESSION_NAME"], int(os.environ["API_ID"]), os.environ["API_HASH"])
 
-app = PyTgCalls(Bot)
+Client = PyTgCalls(Bot)
 
 OWNER_ID = int(os.environ["OWNER_ID"])
 
@@ -192,14 +192,14 @@ async def skip_item(chat_id, lol):
         return 0
 
 
-@app.on_stream_end()
+@Client.on_stream_end()
 async def on_end_handler(_, update: Update):
     if isinstance(update, StreamAudioEnded):
         chat_id = update.chat_id
         await skip_current_song(chat_id)
 
 
-@app.on_closed_voice_chat()
+@Client.on_closed_voice_chat()
 async def close_handler(client: PyTgCalls, chat_id: int):
     if chat_id in QUEUE:
         clear_queue(chat_id)
