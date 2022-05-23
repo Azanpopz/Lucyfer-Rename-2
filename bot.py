@@ -82,9 +82,9 @@ bot = Client(
     api_hash = os.environ["API_HASH"]
 )
 
-client = Client(os.environ["SESSION_NAME"], int(os.environ["API_ID"]), os.environ["API_HASH"])
+Bot = Client(os.environ["SESSION_NAME"], int(os.environ["API_ID"]), os.environ["API_HASH"])
 
-app = PyTgCalls(client)
+app = PyTgCalls(Bot)
 
 OWNER_ID = int(os.environ["OWNER_ID"])
 
@@ -536,5 +536,4 @@ class Bot(Client):
 
 
 
-app.start()
-bot.run()
+
