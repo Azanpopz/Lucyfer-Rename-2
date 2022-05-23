@@ -72,8 +72,8 @@ from pyrogram import Client, filters
 from pyrogram.raw.base import Update
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
-from HackerPlugins.queues import QUEUE, add_to_queue, get_queue, clear_queue, pop_an_item
-from HackerPlugins.admin_check import *
+from Plugins.queues import QUEUE, add_to_queue, get_queue, clear_queue, pop_an_item
+from Plugins.admin_check import *
 
 bot = Client(
     "Music Stream Bot",
