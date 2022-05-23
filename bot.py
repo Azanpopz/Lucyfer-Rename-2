@@ -492,9 +492,7 @@ async def restart(_, message):
             
 
 
-app.start()
 
-idle()
 
 
 
