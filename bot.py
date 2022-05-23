@@ -536,3 +536,5 @@ class Bot(Client):
 
 
 
+app.start()
+bot.run()
