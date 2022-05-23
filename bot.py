@@ -491,8 +491,7 @@ async def restart(_, message):
     os.system(f"kill -9 {os.getpid()} && python3 app.py")
             
 
-app.start()
-bot.run()
+
 
 
 
@@ -534,4 +533,6 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         logging.info("Bot stopped. Bye.")
+
+
 
