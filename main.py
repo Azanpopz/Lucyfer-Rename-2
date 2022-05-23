@@ -4,6 +4,4 @@ from bot import Bot
 
 Bot().run()
 
-app.start()
 
-idle()
