@@ -5,6 +5,20 @@ from youtube_dl import YoutubeDL
 
 import  os
 
+
+"""Importing"""
+from os import environ
+
+
+class Config(object):
+    API_ID = int(environ.get("API_ID", 0))
+    API_HASH = environ.get("API_HASH", "")
+    BOT_TOKEN = environ.get("BOT_TOKEN", "")
+    RENAME_DB_URL = environ.get("RENAME_DB_URL", "")
+
+
+
+
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 APP_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
