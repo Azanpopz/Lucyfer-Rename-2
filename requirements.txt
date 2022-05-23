@@ -34,4 +34,14 @@ pymongo
 dnspython
 
 
+pyrogram
+tgcrypto
+py-tgcalls
+youtube_search
+pytube
+yt_dlp
+yt-dlp
+youtube_dl
+youtube-dl
+
 
