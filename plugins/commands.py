@@ -197,7 +197,7 @@ async def start(client, message):
                         InlineKeyboardButton('💌 SUBSCRIBE ✅', url=f"https://t.me/{temp.U_NAME}?start={file_id}")
                     ],
                     [
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
+                        InlineKeyboardButton('💌 SUBSCRIBE ✅', callback_data=f"checksub#{message.command[1]}'),
                         InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
                     ],
                     [
